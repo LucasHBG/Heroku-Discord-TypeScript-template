@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { GreetCommand, TimeCommand } from "./commands";
+import { GreetCommand, PlayCommand, TimeCommand } from "./commands";
 import Command from "./commands/commandInterface";
 import { CommandParser } from "./models/commandParser";
 
@@ -13,7 +13,8 @@ export default class CommandHandler {
 
     const commandClasses = [
       GreetCommand,
-      TimeCommand
+      TimeCommand,
+      PlayCommand, 
     ];
 
     this.commands = commandClasses.map(commandClass => new commandClass());
@@ -26,17 +27,15 @@ export default class CommandHandler {
       return;
     }
 
-    message.reply(`Hive Greeter recieved '${this.echoMessage(message)}' from ${message.author.tag}`);
-
     const commandParser = new CommandParser(message, this.prefix);
 
     const matchedCommand = this.commands.find(command => command.commandNames.includes(commandParser.parsedCommandName));
 
     if (!matchedCommand) {
-      await message.reply(`I don't recognize that command. Try !help.`);
+      await message.reply(`Não reconheci o comando. Tente !help.`);
     } else {
       await matchedCommand.run(message).catch(error => {
-        message.reply(`'${this.echoMessage(message)}' failed because of ${error}`);
+        message.reply(`'${this.echoMessage(message)}' falhou devido o seguinte erro: ${error}`);
       });
     }
   }

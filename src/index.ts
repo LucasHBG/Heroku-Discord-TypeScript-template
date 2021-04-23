@@ -25,9 +25,9 @@ const commandHandler = new CommandHandler(config.prefix);
 //////////////////////////////////////////////////////////////////
 // Discord Events: https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-channelCreate
 
-client.on("ready", () => { console.log("Hive Greeter has started"); });
+client.on("ready", () => { console.log("Radio 4Queijos está online!"); });
 client.on("message", (message: Message) => { commandHandler.handleMessage(message); });
-client.on("error", e => { console.error("Discord client error!", e); });
+client.on("error", e => { console.error("Erro no cliente do discord!", e); });
 
 client.login(DISCORD_TOKEN);
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
