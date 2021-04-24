@@ -1,13 +1,13 @@
 import { Command } from "../models";
 import { loadCommands } from "../utils/load-commands";
-import { generateRichEmbed } from "../utils/rich-embed";
+import { generateMessageEmbed } from "../utils/rich-embed";
 
 module.exports = {
   name: "help",
   description: "show all commands",
   execute: (message, args) => {
     const commands = loadCommands();
-    const embed = generateRichEmbed("List of commands", message.client);
+    const embed = generateMessageEmbed("List of commands", message.client);
 
     commands
       .filter((command) => !command.invisible)

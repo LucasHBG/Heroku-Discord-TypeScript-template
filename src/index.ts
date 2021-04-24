@@ -42,7 +42,7 @@ client.on("message", async (message) => {
 client.on("ready", () => {
   const activity = `${PREFIX}help`;
 
-  client.user.setActivity(activity, {
+  client.user?.setActivity(activity, {
     type: "LISTENING",
   });
 });
