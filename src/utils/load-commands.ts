@@ -18,11 +18,8 @@ export function loadCommands() {
   files.forEach((file) => {
     const command = require(`../commands/${file}`) as Command;
 
-    if (!command) 
-      errored.push(file);
-    else 
-      commands.set(command.name, command);
-    
+    if (!command) errored.push(file);
+    else commands.set(command.name, command);
   });
 
   if (errored.length >= 1) {

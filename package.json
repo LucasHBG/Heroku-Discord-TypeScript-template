@@ -1,7 +1,7 @@
 {
-  "name": "4queijos_radio_bot",
+  "name": "dth-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Discord-Heroku-Typescript ready project to optimize your start",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -9,7 +9,7 @@
     "dev": "nodemon -e ts --exec \"npm run build && npm start\""
   },
   "keywords": [],
-  "author": "",
+  "author": "@LucasHBG",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1"

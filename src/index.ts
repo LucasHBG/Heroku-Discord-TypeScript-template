@@ -14,8 +14,7 @@ client.on("message", async (message) => {
   //Create a shortcut for message.content
   const text: string = message.content;
 
-  //Setup a null-safe verification if there is an error when loading PREFIX from the enviroment
-  if (message.author.bot || !text.startsWith(`${PREFIX ?? ";;"}`)) {
+  if (message.author.bot || !text.startsWith(`${PREFIX}`)) {
     return;
   }
 
