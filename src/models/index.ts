@@ -11,6 +11,4 @@
  * DO NOT export command classes using default
  */
 
-// export * from "./greetCommand";
-// export * from "./timeCommand";
-// export * from "./playCommand";
+export * from './command.model';
