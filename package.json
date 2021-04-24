@@ -1,7 +1,7 @@
 {
-  "name": "dth-template",
+  "name": "hdt-template",
   "version": "1.0.0",
-  "description": "A Discord-Heroku-Typescript ready project to optimize your start",
+  "description": "A Heroku-Discord-Typescript ready template project to optimize your start",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
